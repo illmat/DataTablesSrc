@@ -212,6 +212,9 @@ function _fnSortAria ( settings )
 	{
 		var col = columns[i];
 		var asSorting = col.asSorting;
+		if( typeof col.sTitle == 'function' ) {
+			col.sTitle = col.sTitle();
+		}
 		var sTitle = col.sTitle.replace( /<.*?>/g, "" );
 		var th = col.nTh;
 

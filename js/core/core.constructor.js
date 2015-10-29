@@ -231,6 +231,9 @@ if ( oLanguage.sUrl !== "" )
 	 * get async to the remainder of this function we use bInitHandedOff to indicate that
 	 * _fnInitialise will be fired by the returned Ajax handler, rather than the constructor
 	 */
+	if ( typeof oLanguage.sUrl == 'function' ) {
+		oLanguage.sUrl = oLanguage.sUrl();
+	}
 	$.ajax( {
 		dataType: 'json',
 		url: oLanguage.sUrl,
